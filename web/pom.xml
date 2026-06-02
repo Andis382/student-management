@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.andisramja</groupId>
+        <artifactId>student-management</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>web</artifactId>
+    <name>Moduli Web (REST API)</name>
+    <description>Aplikacioni Spring Boot me REST controller-at dhe pikën e nisjes</description>
+
+    <dependencies>
+        <!-- Moduli Service: logjika e biznesit (sjell edhe model, dto, mapper, repository) -->
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>service</artifactId>
+        </dependency>
+
+        <!-- Moduli Excel: eksportimi në .xlsx -->
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>excel</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Web për REST API -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Validimi i hyrjeve me @Valid dhe Bean Validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- Actuator: ekspozon endpoint-in /actuator/health për probe-t e OpenShift -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- Lombok për @RequiredArgsConstructor në controller -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Baza e të dhënave H2 për zhvillim (in-memory) -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Driver-i PostgreSQL për produksion (aktivizohet nga application.properties) -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Testimi i aplikacionit -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin-i Spring Boot: ndërton një .jar të ekzekutueshëm (vetëm ky modul) -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.andisramja.studentmanagement.StudentManagementApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

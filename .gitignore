@@ -1,0 +1,32 @@
+# ============================================================
+# .gitignore për projektin Maven "Sistemi i Menaxhimit të Studentëve"
+# ============================================================
+
+# Output-i i ndërtimit Maven
+target/
+
+# Mbetjet e repackage-it të Spring Boot
+*.jar.original
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# IDE - Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+bin/
+
+# IDE - VS Code
+.vscode/
+
+# File-at e logut
+*.log
+
+# File-at e sistemit operativ
+.DS_Store
+Thumbs.db

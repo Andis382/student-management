@@ -1,0 +1,17 @@
+# ============================================================
+# Route për "Sistemi i Menaxhimit të Studentëve"
+# Mundëson aksesin e jashtëm (URL publike) ndaj aplikacionit.
+# ============================================================
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: student-management
+  labels:
+    app: student-management
+spec:
+  to:
+    kind: Service
+    name: student-management
+    weight: 100
+  port:
+    targetPort: 8080

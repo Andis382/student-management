@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.andisramja</groupId>
+        <artifactId>student-management</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>dto</artifactId>
+    <name>Moduli DTO (Objektet e Transferimit të të Dhënave)</name>
+    <description>Përmban klasat DTO të përdorura nga API-ja, p.sh. StudentDTO me validim</description>
+
+    <dependencies>
+        <!-- Lombok: redukton kodin boilerplate -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- API e Jakarta Validation për anotacionet e validimit (@NotBlank, @Email, etj.) -->
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

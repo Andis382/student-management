@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.andisramja</groupId>
+        <artifactId>student-management</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>mapper</artifactId>
+    <name>Moduli Mapper (MapStruct)</name>
+    <description>Përmban mapper-at MapStruct për konvertimin mes DTO dhe Entity</description>
+
+    <dependencies>
+        <!-- Moduli Model: entiteti Student -->
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>model</artifactId>
+        </dependency>
+
+        <!-- Moduli DTO: StudentDTO -->
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>dto</artifactId>
+        </dependency>
+
+        <!-- MapStruct: libraria runtime e mapimit -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+
+        <!-- Spring Context: nevojitet sepse impl-i i gjeneruar mban anotacionin @Component -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

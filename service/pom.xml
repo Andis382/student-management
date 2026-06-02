@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.andisramja</groupId>
+        <artifactId>student-management</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>service</artifactId>
+    <name>Moduli Service (Logjika e Biznesit)</name>
+    <description>Përmban interface-t dhe implementimet e shërbimeve me logjikën e biznesit</description>
+
+    <dependencies>
+        <!-- Modulet e brendshme -->
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>dto</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>mapper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.andisramja</groupId>
+            <artifactId>repository</artifactId>
+        </dependency>
+
+        <!-- Spring core për @Service dhe @Transactional -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Lombok për @RequiredArgsConstructor -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Testimi: JUnit 5 + Mockito (përfshihen në starter-test) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

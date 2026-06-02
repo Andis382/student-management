@@ -1,0 +1,48 @@
+# ============================================================
+# Deployment për "Sistemi i Menaxhimit të Studentëve"
+# Shënim: zëvendëso NAMESPACE me emrin e projektit tënd në OpenShift.
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-management
+  labels:
+    app: student-management
+spec:
+  # Numri i replikave (instancave) të aplikacionit
+  replicas: 1
+  selector:
+    matchLabels:
+      app: student-management
+  template:
+    metadata:
+      labels:
+        app: student-management
+    spec:
+      containers:
+        - name: student-management
+          image: image-registry.openshift-image-registry.svc:5000/NAMESPACE/student-management:latest
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          # Kufijtë e burimeve (CPU dhe memorie)
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          # Probe-t e shëndetit përdorin endpoint-in e Actuator-it
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 40
+            periodSeconds: 15

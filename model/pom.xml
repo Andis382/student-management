@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.andisramja</groupId>
+        <artifactId>student-management</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>model</artifactId>
+    <name>Moduli Model (Entitetet)</name>
+    <description>Përmban entitetet JPA të sistemit, p.sh. entitetin Student me Lombok</description>
+
+    <dependencies>
+        <!-- Lombok: redukton kodin boilerplate (getter, setter, builder) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- API e Jakarta Persistence për anotacionet JPA (@Entity, @Id, etj.) -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
