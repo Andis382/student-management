@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: student-management
-          image: image-registry.openshift-image-registry.svc:5000/NAMESPACE/student-management:latest
+          image: image-registry.openshift-image-registry.svc:5000/andis382-dev/student-management:latest
           ports:
             - containerPort: 8080
               protocol: TCP
