@@ -119,11 +119,11 @@ Të gjitha rrugët fillojnë me prefiksin `/api/students`.
 {
   "firstName": "Andis",
   "lastName": "Ramja",
-  "email": "andis.ramja@example.com",
-  "dateOfBirth": "2000-05-15",
+  "email": "andisramja14@gmail.com",
+  "dateOfBirth": "2001-04-04",
   "enrollmentDate": "2019-10-01",
   "gpa": 3.8,
-  "major": "Inxhinieri Informatike"
+  "major": "Inxhinieri Software"
 }
 ```
 
@@ -133,7 +133,7 @@ Të gjitha rrugët fillojnë me prefiksin `/api/students`.
 # Shto një student
 curl -X POST http://localhost:8080/api/students \
   -H "Content-Type: application/json" \
-  -d '{"firstName":"Andis","lastName":"Ramja","email":"andis.ramja@example.com","gpa":3.8,"major":"Inxhinieri Informatike"}'
+  -d '{"firstName":"Andis","lastName":"Ramja","email":"andisramja14@gmail.com","gpa":3.8,"major":"Inxhinieri Software"}'
 
 # Listo të gjithë studentët
 curl http://localhost:8080/api/students
@@ -146,7 +146,7 @@ curl -OJ http://localhost:8080/api/students/export
 
 ```powershell
 # Shto një student
-$body = @{ firstName="Andis"; lastName="Ramja"; email="andis.ramja@example.com"; gpa=3.8; major="Inxhinieri Informatike" } | ConvertTo-Json
+$body = @{ firstName="Andis"; lastName="Ramja"; email="andisramja14@gmail.com"; gpa=3.8; major="Inxhinieri Software" } | ConvertTo-Json
 Invoke-RestMethod -Uri "http://localhost:8080/api/students" -Method Post -Body $body -ContentType "application/json"
 
 # Listo studentët

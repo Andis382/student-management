@@ -53,9 +53,9 @@ class StudentControllerTest {
                 .id(1L)
                 .firstName("Andis")
                 .lastName("Ramja")
-                .email("andis.ramja@example.com")
+                .email("andisramja14@gmail.com")
                 .gpa(3.8)
-                .major("Inxhinieri Informatike")
+                .major("Inxhinieri Software")
                 .build();
     }
 
@@ -66,7 +66,7 @@ class StudentControllerTest {
 
         mockMvc.perform(get("/api/students"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].email").value("andis.ramja@example.com"));
+                .andExpect(jsonPath("$[0].email").value("andisramja14@gmail.com"));
     }
 
     @Test
@@ -99,11 +99,11 @@ class StudentControllerTest {
                 {
                   "firstName": "Andis",
                   "lastName": "Ramja",
-                  "email": "andis.ramja@example.com",
-                  "dateOfBirth": "2000-05-15",
+                  "email": "andisramja14@gmail.com",
+                  "dateOfBirth": "2001-04-04",
                   "enrollmentDate": "2019-10-01",
                   "gpa": 3.8,
-                  "major": "Inxhinieri Informatike"
+                  "major": "Inxhinieri Software"
                 }
                 """;
 

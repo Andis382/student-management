@@ -61,22 +61,22 @@ class StudentServiceTest {
                 .id(1L)
                 .firstName("Andis")
                 .lastName("Ramja")
-                .email("andis.ramja@example.com")
-                .dateOfBirth(LocalDate.of(2000, 5, 15))
+                .email("andisramja14@gmail.com")
+                .dateOfBirth(LocalDate.of(2001, 4, 4))
                 .enrollmentDate(LocalDate.of(2019, 10, 1))
                 .gpa(3.8)
-                .major("Inxhinieri Informatike")
+                .major("Inxhinieri Software")
                 .build();
 
         studentDTO = StudentDTO.builder()
                 .id(1L)
                 .firstName("Andis")
                 .lastName("Ramja")
-                .email("andis.ramja@example.com")
-                .dateOfBirth(LocalDate.of(2000, 5, 15))
+                .email("andisramja14@gmail.com")
+                .dateOfBirth(LocalDate.of(2001, 4, 4))
                 .enrollmentDate(LocalDate.of(2019, 10, 1))
                 .gpa(3.8)
-                .major("Inxhinieri Informatike")
+                .major("Inxhinieri Software")
                 .build();
     }
 
@@ -93,7 +93,7 @@ class StudentServiceTest {
         StudentDTO result = studentService.createStudent(studentDTO);
 
         assertThat(result).isNotNull();
-        assertThat(result.getEmail()).isEqualTo("andis.ramja@example.com");
+        assertThat(result.getEmail()).isEqualTo("andisramja14@gmail.com");
         assertThat(result.getFirstName()).isEqualTo("Andis");
     }
 
@@ -104,7 +104,7 @@ class StudentServiceTest {
 
         assertThatThrownBy(() -> studentService.createStudent(studentDTO))
                 .isInstanceOf(EmailAlreadyExistsException.class)
-                .hasMessageContaining("andis.ramja@example.com");
+                .hasMessageContaining("andisramja14@gmail.com");
 
         verify(studentRepository, never()).save(any(Student.class));
     }
@@ -119,7 +119,7 @@ class StudentServiceTest {
 
         studentService.createStudent(studentDTO);
 
-        verify(studentRepository, times(1)).existsByEmail("andis.ramja@example.com");
+        verify(studentRepository, times(1)).existsByEmail("andisramja14@gmail.com");
         verify(studentRepository, times(1)).save(any(Student.class));
         verify(studentMapper, times(1)).toDto(student);
     }
@@ -135,7 +135,7 @@ class StudentServiceTest {
         List<StudentDTO> result = studentService.getAllStudents();
 
         assertThat(result).hasSize(1);
-        assertThat(result.get(0).getEmail()).isEqualTo("andis.ramja@example.com");
+        assertThat(result.get(0).getEmail()).isEqualTo("andisramja14@gmail.com");
     }
 
     @Test
@@ -232,7 +232,7 @@ class StudentServiceTest {
         StudentDTO changes = StudentDTO.builder()
                 .firstName("Ardit")
                 .lastName("Hoxha")
-                .email("andis.ramja@example.com") // email i pandryshuar
+                .email("andisramja14@gmail.com") // email i pandryshuar
                 .gpa(3.5)
                 .major("Shkenca Kompjuterike")
                 .build();
@@ -257,7 +257,7 @@ class StudentServiceTest {
                 .lastName("Ramja")
                 .email("tjeter@example.com") // email i ndryshuar
                 .gpa(3.8)
-                .major("Inxhinieri Informatike")
+                .major("Inxhinieri Software")
                 .build();
 
         when(studentRepository.findById(1L)).thenReturn(Optional.of(student));
