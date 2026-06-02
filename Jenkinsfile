@@ -24,7 +24,7 @@ pipeline {
         stage('Ndërtimi') {
             steps {
                 echo 'Po ndërtohet projekti me Maven...'
-                sh 'mvn clean install -DskipTests'
+                sh 'chmod +x mvnw && ./mvnw clean install -DskipTests'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
         stage('Testimi') {
             steps {
                 echo 'Po ekzekutohen testet unitare...'
-                sh 'mvn test'
+                sh './mvnw test'
             }
             post {
                 always {
@@ -46,7 +46,7 @@ pipeline {
         stage('Paketimi') {
             steps {
                 echo 'Po paketohet aplikacioni...'
-                sh 'mvn package'
+                sh './mvnw package -DskipTests'
             }
         }
 
@@ -54,7 +54,7 @@ pipeline {
         stage('Ruajtja Artifaktit') {
             steps {
                 echo 'Po ruhen artifaktet (.jar)...'
-                archiveArtifacts artifacts: '**/*.jar', fingerprint: true
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
     }
